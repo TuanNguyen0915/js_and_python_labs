@@ -37,13 +37,13 @@
 
 // SOLUTION
 function duplicateCount(text) {
-    let newArr = text.split("")
+    let newArr = text.toLowerCase().split("")
     let count = 0
     let newObj = newArr.reduce((prev, char) => {
-        if (prev[char.toLowerCase()]) {
-            prev[char.toLowerCase()] += 1
+        if (prev[char]) {
+            prev[char] += 1
         }
-        else prev[char.toLowerCase()] = 1
+        else prev[char] = 1
         return prev
     }, {})
     Object.keys(newObj).forEach(key => {
@@ -54,4 +54,3 @@ function duplicateCount(text) {
     )
     return count
 }
-
