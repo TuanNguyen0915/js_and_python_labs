@@ -55,7 +55,7 @@
 //     return count
 // }
 
-// ******************************************* /
+// ******************************************* ex3/
 // Enough is enough!
 // Alice and Bob were on a holiday. Both of them took many pictures of the places they've been, and now they want to show Charlie their entire collection. However, Charlie doesn't like these sessions, since the motif usually repeats. He isn't fond of seeing the Eiffel tower 40 times.
 // He tells them that he will only sit for the session if they show the same motif at most N times. Luckily, Alice and Bob are able to encode the motif as a number. Can you help them to remove numbers such that their list contains each number only up to N times, without changing the order?
@@ -79,12 +79,38 @@
 //     return res
 // }
 
-function deleteNth(arr, n) {
-    const res = []
-    for (let i of arr) {
-        const arrLength = res.filter(item => item === i).length
-        if (arrLength === n) continue
-        else res.push(i)
-    }
-    return res
+// function deleteNth(arr, n) {
+//     const res = []
+//     for (let i of arr) {
+//         const arrLength = res.filter(item => item === i).length
+//         if (arrLength === n) continue
+//         else res.push(i)
+//     }
+//     return res
+// }
+
+
+// ***************************** ex4
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+
+// Examples
+// [7, 1]  =>  [1, 7]
+// [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+// [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+
+const sortOddNumber = arr => {
+    const odds = arr.filter(item => item % 2 !== 0).sort((a, b) => a - b)
+    // let count = -1
+    // return arr.map(item => {
+    //     if (item % 2 !== 0) {
+    //         count += 1
+    //         return odds[count]
+    //     } else return item
+    // })
+
+    // Using shift method (best way)
+    return arr.map(i => i % 2 ? odds.shift() : i)
 }
+
+
+console.log(sortOddNumber([1, 11, 2, 8, 3, 4, 5]));
