@@ -1,0 +1,1 @@
+console.log(dirReduc(["NORTH", "WEST", 'EAST', 'SOUTH', "SOUTH", "EAST"]));
