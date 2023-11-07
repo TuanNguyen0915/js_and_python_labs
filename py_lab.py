@@ -109,3 +109,18 @@
 
 
 # print(camelCase("TuanNguyen"))
+
+
+# ******************* ex6
+# Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+# moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+
+
+def moveZeroes(arr):
+    res, zero_lst = [], []
+    [res.append(c) if c != 0 else zero_lst.append(c) for c in arr]
+    return res + zero_lst
+
+
+print(moveZeroes(["false", 1, 0, 1, 2, 0, 1, 3, "a"]))
