@@ -76,20 +76,36 @@
 # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
 
 
-def sortTheOdd(lst):
-    odds = sorted([i for i in lst if i % 2 != 0])
-    # # Using for loop
-    # res = []
-    # for item in lst:
-    #     if item % 2 != 0:
-    #         res.append(odds[idx])
-    #     else:
-    #         res.append(item)
-    # return res
-    ## List comprehension (Best way)
-    return [item if item % 2 == 0 else odds.pop(0) for item in lst]
-    ## Using map and lambda
-    # return list(map(lambda i: i if i % 2 == 0 else odds.pop(0), lst))
+# def sortTheOdd(lst):
+#     odds = sorted([i for i in lst if i % 2 != 0])
+#     # # Using for loop
+#     # res = []
+#     # for item in lst:
+#     #     if item % 2 != 0:
+#     #         res.append(odds[idx])
+#     #     else:
+#     #         res.append(item)
+#     # return res
+#     ## List comprehension (Best way)
+#     return [item if item % 2 == 0 else odds.pop(0) for item in lst]
+#     ## Using map and lambda
+#     # return list(map(lambda i: i if i % 2 == 0 else odds.pop(0), lst))
 
 
-print(sortTheOdd([1, 11, 2, 8, 3, 4, 5]))
+# print(sortTheOdd([1, 11, 2, 8, 3, 4, 5]))
+
+
+# ************************ ex5
+# Complete the solution so that the function will break up camel casing, using a space between words.
+
+# Example
+# "camelCasing"  =>  "camel Casing"
+# "identifier"   =>  "identifier"
+# ""             =>  ""
+
+
+# def camelCase(str):
+#     return "".join([f" {c}" if c.isupper() else c for c in str])
+
+
+# print(camelCase("TuanNguyen"))

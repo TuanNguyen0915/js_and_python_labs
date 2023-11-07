@@ -98,19 +98,38 @@
 // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
 // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
 
-const sortOddNumber = arr => {
-    const odds = arr.filter(item => item % 2 !== 0).sort((a, b) => a - b)
-    // let count = -1
-    // return arr.map(item => {
-    //     if (item % 2 !== 0) {
-    //         count += 1
-    //         return odds[count]
-    //     } else return item
-    // })
+// const sortOddNumber = arr => {
+//     const odds = arr.filter(item => item % 2 !== 0).sort((a, b) => a - b)
+//     // let count = -1
+//     // return arr.map(item => {
+//     //     if (item % 2 !== 0) {
+//     //         count += 1
+//     //         return odds[count]
+//     //     } else return item
+//     // })
 
-    // Using shift method (best way)
-    return arr.map(i => i % 2 ? odds.shift() : i)
-}
+//     // Using shift method (best way)
+//     return arr.map(i => i % 2 ? odds.shift() : i)
+// }
 
 
-console.log(sortOddNumber([1, 11, 2, 8, 3, 4, 5]));
+// console.log(sortOddNumber([1, 11, 2, 8, 3, 4, 5]));
+
+
+// ***************** ex5
+// Complete the solution so that the function will break up camel casing, using a space between words.
+
+// Example
+// "camelCasing"  =>  "camel Casing"
+// "identifier"   =>  "identifier"
+// ""             =>  ""
+
+// const camelCase = string => {
+//     return [...string].map((item, idx) => {
+//         return idx === 0
+//             ? item
+//             : item === item.toUpperCase() ? ` ${item}` : item
+//     }).join("")
+// }
+
+// console.log(camelCase('TuanNguyen'));
