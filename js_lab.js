@@ -184,12 +184,24 @@
 // ************ ex8
 // To find the minimum total amount of distance traveled by all crews before they can begin work, we can assign each crew to the nearest job. This can be done by sorting the positions of the crews and jobs in ascending order, and then pairing them up in order. The total distance traveled is the sum of the absolute differences between the positions of each crew and its assigned job.
 
-function getMinCost(crew_id,job_id) {
-    crew_id.sort((a, b) => a - b);
-    job_id.sort((a, b) => a - b);
-    let totalCost = 0;
-    for (let i = 0; i < crew_id.length; i++) {
-        totalCost += Math.abs(crew_id[i] - job_id[i]);
-    }
-    return totalCost;
-}
+// function getMinCost(crew_id,job_id) {
+//     crew_id.sort((a, b) => a - b);
+//     job_id.sort((a, b) => a - b);
+//     let totalCost = 0;
+//     for (let i = 0; i < crew_id.length; i++) {
+//         totalCost += Math.abs(crew_id[i] - job_id[i]);
+//     }
+//     return totalCost;
+// }
+
+
+// *************** ex9
+// You need to write regex that will validate a password to make sure it meets the following criteria:
+
+// At least six characters long
+// contains a lowercase letter
+// contains an uppercase letter
+// contains a digit
+// only contains alphanumeric characters (note that '_' is not alphanumeric)
+
+// const REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/
