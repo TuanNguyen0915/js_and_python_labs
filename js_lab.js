@@ -165,17 +165,31 @@
 // arr = [0,1,2,1,2,3]
 // the largest sub-arr length = 4: [1,2,1,2]
 
-function longestSubArray(arr) {
-    if (arr.length <= 2) {
-        return arr.length
+// function longestSubArray(arr) {
+//     if (arr.length <= 2) {
+//         return arr.length
+//     }
+//     let leftSide = 0, rightSide = 0, maxLength = 0
+//     while (rightSide < arr.length) {
+//         if (Math.abs(Math.max(...arr.slice(leftSide, rightSide + 1)) - Math.min(...arr.slice(leftSide, rightSide + 1))) <= 1) {
+//             maxLength = Math.max(maxLength, rightSide - leftSide + 1)
+//             rightSide++
+//         } else leftSide++
+//     }
+//     return maxLength
+// }
+// console.log(longestSubArray([0, 1, 2, 1, 2, 3]));
+
+
+// ************ ex8
+// To find the minimum total amount of distance traveled by all crews before they can begin work, we can assign each crew to the nearest job. This can be done by sorting the positions of the crews and jobs in ascending order, and then pairing them up in order. The total distance traveled is the sum of the absolute differences between the positions of each crew and its assigned job.
+
+function getMinCost(crew_id,job_id) {
+    crew_id.sort((a, b) => a - b);
+    job_id.sort((a, b) => a - b);
+    let totalCost = 0;
+    for (let i = 0; i < crew_id.length; i++) {
+        totalCost += Math.abs(crew_id[i] - job_id[i]);
     }
-    let leftSide = 0, rightSide = 0, maxLength = 0
-    while (rightSide < arr.length) {
-        if (Math.abs(Math.max(...arr.slice(leftSide, rightSide + 1)) - Math.min(...arr.slice(leftSide, rightSide + 1))) <= 1) {
-            maxLength = Math.max(maxLength, rightSide - leftSide + 1)
-            rightSide++
-        } else leftSide++
-    }
-    return maxLength
+    return totalCost;
 }
-console.log(longestSubArray([0, 1, 2, 1, 2, 3]));
