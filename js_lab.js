@@ -140,17 +140,42 @@
 
 // moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
 
-function moveZeros(arr) {
-    let res = [], zeroArr = []
-    arr.map(item => item === 0 ? zeroArr.push(item) : res.push(item))
-    return [...res, ...zeroArr]
-    // using concat
-    // return res.concat(zeroArr)
-    // using rest and filter
-    // return [
-    //     ...arr.filter(c => c !== 0),
-    //     ...arr.filter(c => c === 0)
-    // ]
-}
+// function moveZeros(arr) {
+//     let res = [], zeroArr = []
+//     arr.map(item => item === 0 ? zeroArr.push(item) : res.push(item))
+//     return [...res, ...zeroArr]
+//     // using concat
+//     // return res.concat(zeroArr)
+//     // using rest and filter
+//     // return [
+//     //     ...arr.filter(c => c !== 0),
+//     //     ...arr.filter(c => c === 0)
+//     // ]
+// }
 
-console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
+// console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
+
+// console.log('5' + 3);
+// console.log(typeof ('5' + 3));
+
+
+// *************** ex7
+// Longest subarray
+// Given an array of integers, what is the length of the longest subarray containing no more than two distinct values such that the distinct values differ by no more than 1?
+// arr = [0,1,2,1,2,3]
+// the largest sub-arr length = 4: [1,2,1,2]
+
+function longestSubArray(arr) {
+    if (arr.length <= 2) {
+        return arr.length
+    }
+    let leftSide = 0, rightSide = 0, maxLength = 0
+    while (rightSide < arr.length) {
+        if (Math.abs(Math.max(...arr.slice(leftSide, rightSide + 1)) - Math.min(...arr.slice(leftSide, rightSide + 1))) <= 1) {
+            maxLength = Math.max(maxLength, rightSide - leftSide + 1)
+            rightSide++
+        } else leftSide++
+    }
+    return maxLength
+}
+console.log(longestSubArray([0, 1, 2, 1, 2, 3]));
