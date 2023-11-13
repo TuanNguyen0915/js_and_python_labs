@@ -205,3 +205,13 @@
 // only contains alphanumeric characters (note that '_' is not alphanumeric)
 
 // const REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/
+
+// *************** ex10
+// Given the string representations of two integers, return the string representation of the sum of those integers.
+
+// function sumString(a, b) {
+//     if (a === '') return b
+//     else if (b === '') return a
+//     else return (BigInt(a) + BigInt(b)).toString()
+// }
+// console.log(sumString('712569312664357328695151392', '8100824045303269669937'))
